@@ -1,0 +1,62 @@
+TABELLE E CONTENUTI 
+_____________________
+
+1. DIPARTIMENTI 
+ID - PK-SMALLINT UNSIGNED 
+type - VARCHAR(20) - NOTNULL
+description - TEXT - NOTNULL
+address - VARCHAR(20)
+telephone_numb - VARCHAR(20)
+fax - VARCHAR(20)
+
+2 CORSI LAUREA 
+ID PK- SMALLINT UNSIGNED
+name - VARCHAR(50) - NOTNULL
+description - TEXT - NOTNULL
+years - YEAR
+
+3. STUDENTS 
+ID PK-INT UNSIGNED
+name - VARCHAR(20) - NOTNULL
+last_name - VARCHAR(20) - NOTNULL
+baige_namb - VARCHAR(20) - NOTNULL
+university_corse_id - FK - NOTNULL
+
+4. EXAMS 
+ID PK-SMALLINT UNSIGNED
+name - VARCHAR(30) - NOTNULL
+description - TEXT
+corses_id - FK
+
+5. CORSES 
+ID PK-SMALLINT UNSIGNED
+name - VARCHAR(30) - NOTNULL
+description - TEXT - NOTNULL
+exams_number - VARCHAR(20)
+exams_hours - VARCHAR(20)
+university_corse_id - FK
+
+6. TEACHERS 
+ID PK-MEDIUMINT UNSIGNED
+name - VARCHAR(20) - NOTNULL
+last_name - VARCHAR(20) -NOTNULL
+type - VARCHAR(20)
+e_mail - VARCHAR(50) - NOTNULL
+number - VARCHAR(20)
+b_day - DATE 
+
+TABELLE PONTE 
+_____________________
+
+1. DEPARTMENT & UNIVERSITY CORSE 
+department_id - PK 
+university_corse_id - PK
+
+2. STUDENTS & EXSAMS
+students_id - PK
+exsams_id - PK 
+vote - TINYINT UNSIGNED NOTNULL 
+
+3. CORSE & THEACHER 
+corse_id - PK
+theacher_id - PK
